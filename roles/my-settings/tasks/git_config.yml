@@ -1,0 +1,32 @@
+---
+- name: Check if diff-so-fancy command exists
+  command: diff-so-fancy --version
+  ignore_errors: true
+  register: diff_so_fancy_result
+
+- name: Print a message if diff-so-fancy is not installed
+  debug:
+    msg: "diff-so-fancy is not installed. Please install it to apply Git configurations."
+  when: diff_so_fancy_result.rc != 0
+
+- name: Set global Git configurations if diff-so-fancy is installed
+  git_config:
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
+    scope: global
+  loop:
+    - { key: 'core.pager', value: 'diff-so-fancy | less --tabs=4 -RFX' }
+    - { key: 'interactive.diffFilter', value: 'diff-so-fancy --patch' }
+    - { key: 'color.ui', value: 'true' }
+    - { key: 'color.diff-highlight.oldNormal', value: 'red bold' }
+    - { key: 'color.diff-highlight.oldHighlight', value: 'red bold 52' }
+    - { key: 'color.diff-highlight.newNormal', value: 'green bold' }
+    - { key: 'color.diff-highlight.newHighlight', value: 'green bold 22' }
+    - { key: 'color.diff.meta', value: '11' }
+    - { key: 'color.diff.frag', value: 'magenta bold' }
+    - { key: 'color.diff.func', value: '146 bold' }
+    - { key: 'color.diff.commit', value: 'yellow bold' }
+    - { key: 'color.diff.old', value: 'red bold' }
+    - { key: 'color.diff.new', value: 'green bold' }
+    - { key: 'color.diff.whitespace', value: 'red reverse' }
+  when: diff_so_fancy_result.rc == 0

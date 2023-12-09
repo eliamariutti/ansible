@@ -1,0 +1,9 @@
+---
+- name: Set zsh as default shell
+  user:
+    name: <username>
+    shell: /usr/bin/zsh
+  become: true
+
+- include_tasks : update_aliases.yml
+- include_tasks : git_config.yml

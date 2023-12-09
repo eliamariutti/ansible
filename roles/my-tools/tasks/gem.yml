@@ -1,0 +1,9 @@
+---
+- name: "Installing tools from Gems"
+  gem:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - wpscan
+    # - bundler
+    # - jekyll

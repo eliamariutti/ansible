@@ -1,0 +1,9 @@
+---
+- name: "My dream env"
+  hosts: localhost
+  roles:
+    - role: "roles/my-tools"
+      become: yes
+      become_user: root
+      become_method: sudo
+    - role: "roles/my-settings"

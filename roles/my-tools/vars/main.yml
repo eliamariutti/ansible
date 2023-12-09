@@ -1,0 +1,30 @@
+---
+app_list:
+  - colordiff
+  - bat
+  - curl
+  - entr
+  - exa
+  - exiftool
+  - flameshot
+  - git
+  - gpaste-2
+  - grc
+  - htop
+  - httpie
+  - iftop
+  - jq
+  - lnav
+  - lsd
+  - nmap
+  - ntpdate
+  - pipx
+  - screen
+  - sqlite3
+  - tcpdump
+  - terminator
+  - tree
+  - vim
+  - wireshark
+  - zsh
+  # - netselect-apt
