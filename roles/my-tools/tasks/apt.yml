@@ -8,5 +8,5 @@
 - name: "Install my list of tools"
   apt:
     name: "{{ item }}"
-    state: present
+    state: latest
   with_items: "{{ app_list }}"
