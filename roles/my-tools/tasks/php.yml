@@ -1,0 +1,21 @@
+---
+- name: Install PHP
+  import_role:
+    name: geerlingguy.php
+  vars:
+    php_default_version_debian: "8.2"
+    php_install_recommends: true
+    php_packages:
+      - php-cli
+      - php-curl
+      - php-gd
+      - php-intl
+      - php-json
+      - php-mbstring
+      - php-mysql
+      - php-opcache
+      - php-readline
+      - php-soap
+      - php-xml
+      - php-zip
+

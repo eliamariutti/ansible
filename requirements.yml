@@ -3,5 +3,5 @@
 - src: diodonfrost.p10k
 # - src: gantsign.visual-studio-code
 - src: geerlingguy.nodejs
-# - src: geerlingguy.php
+- src: geerlingguy.php
 # - src: geerlingguy.composer
