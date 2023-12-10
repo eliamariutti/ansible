@@ -29,4 +29,10 @@
     - { key: 'color.diff.old', value: 'red bold' }
     - { key: 'color.diff.new', value: 'green bold' }
     - { key: 'color.diff.whitespace', value: 'red reverse' }
+    - { key: 'alias.co', value: 'checkout' }
+    - { key: 'alias.br', value: 'branch' }
+    - { key: 'alias.ci', value: 'commit' }
+    - { key: 'alias.st', value: 'status' }
+    - { key: 'alias.unstage', value: 'reset HEAD --' }
+    - { key: 'alias.last', value: 'log -1 HEAD' }
   when: diff_so_fancy_result.rc == 0
