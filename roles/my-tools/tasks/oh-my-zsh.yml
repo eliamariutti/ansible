@@ -1,0 +1,42 @@
+---
+- name: Install Oh-My-Zsh
+  import_role:
+    name: gantsign.oh-my-zsh
+  vars:
+    oh_my_zsh_theme: "powerlevel10k/powerlevel10k"
+    oh_my_zsh_plugins:
+      - colored-man-pages
+      - docker
+      - git
+      - git-open
+      - mysql-colorize
+      - zsh-autosuggestions
+      - zsh-fzf-history-search
+      - zsh-syntax-highlighting
+    oh_my_zsh_install: true
+    oh_my_zsh_update_mode: auto
+    oh_my_zsh_update_frequency: 0
+    oh_my_zsh_write_zshrc: true
+    users:
+      - username: "{{ ansible_env.USER }}"
+
+- name: Install Powerlevel10k
+  import_role:
+    name: diodonfrost.p10k
+  vars:
+    p10k_users:
+      - "{{ ansible_env.USER }}"
+    p10k_prompt_connection_color: "dark"
+    p10k_prompt_connection: disconnected
+    p10k_prompt_flow: fluent
+    p10k_prompt_frame: left
+    p10k_prompt_head: "sharp"
+    p10k_prompt_height: two-lines
+    p10k_prompt_separator: "angled"
+    p10k_prompt_spacing: compact
+    p10k_prompt_style: "lean"
+    p10k_prompt_tails: flat
+    p10k_prompt_time: "24-hour"
+    p10k_repository_url: 'https://github.com/romkatv/powerlevel10k.git'
+    p10k_transient_prompt: "yes"
+    zsh_plugin: ohmyzsh
