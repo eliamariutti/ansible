@@ -1,6 +1,7 @@
 ---
-- include_tasks: apt.yml
-- include_tasks: gem.yml
-- include_tasks: nodejs.yml
-- include_tasks: php.yml
-- include_tasks: oh-my-zsh.yml
+# - include_tasks: apt.yml
+# - include_tasks: gem.yml
+# - include_tasks: nodejs.yml
+# - include_tasks: php.yml
+- include_tasks: composer.yml
+# - include_tasks: oh-my-zsh.yml
