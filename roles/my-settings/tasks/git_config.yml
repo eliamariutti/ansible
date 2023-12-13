@@ -1,22 +1,10 @@
 ---
-- name: Check if diff-so-fancy command exists
-  command: diff-so-fancy --version
-  ignore_errors: true
-  register: diff_so_fancy_result
-
-- name: Print a message if diff-so-fancy is not installed
-  debug:
-    msg: "diff-so-fancy is not installed. Please install it to apply Git configurations."
-  when: diff_so_fancy_result.rc != 0
-
-- name: Set global Git configurations if diff-so-fancy is installed
+- name: Set global Git configurations
   git_config:
     name: "{{ item.key }}"
     value: "{{ item.value }}"
     scope: global
   loop:
-    - { key: 'core.pager', value: 'diff-so-fancy | less --tabs=4 -RFX' }
-    - { key: 'interactive.diffFilter', value: 'diff-so-fancy --patch' }
     - { key: 'color.ui', value: 'true' }
     - { key: 'color.diff-highlight.oldNormal', value: 'red bold' }
     - { key: 'color.diff-highlight.oldHighlight', value: 'red bold 52' }
@@ -35,4 +23,29 @@
     - { key: 'alias.st', value: 'status' }
     - { key: 'alias.unstage', value: 'reset HEAD --' }
     - { key: 'alias.last', value: 'log -1 HEAD' }
-  when: diff_so_fancy_result.rc == 0
+
+- name: Check if delta command exists
+  command: delta --version
+  ignore_errors: true
+  register: delta_result
+
+- name: Print a message if delta is not installed
+  debug:
+    msg: "delta is not installed. Please install it to apply Git configurations."
+  when: delta_result.rc != 0
+
+- name: Add Git configurations if delta is installed
+  git_config:
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
+    scope: global
+  loop:
+    - { key: 'core.pager', value: 'delta' }
+    - { key: 'delta.light', value: 'false' }
+    - { key: 'delta.line-numbers', value: 'true' }
+    - { key: 'delta.navigare', value: 'true' }
+    - { key: 'delta.side-by-side', value: 'true' }
+    - { key: 'diff.colorMoved', value: 'default' }
+    - { key: 'interactive.diffFilter', value: 'delta --color-only' }
+    - { key: 'merge.conflictsyle', value: 'diff3' }
+  when: delta_result.rc == 0
