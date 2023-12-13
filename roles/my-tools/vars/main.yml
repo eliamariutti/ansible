@@ -1,30 +1,29 @@
 ---
 app_list:
-  - colordiff
-  - bat
-  - curl
-  - entr
-  - exa
-  - exiftool
-  - flameshot
-  - git
-  - gpaste-2
-  - grc
-  - htop
-  - httpie
-  - iftop
-  - jq
-  - lnav
-  - lsd
-  - nmap
-  - ntpdate
-  - pipx
-  - screen
-  - sqlite3
-  - tcpdump
-  - terminator
-  - tree
-  - vim
-  - wireshark
-  - zsh
+  - colordiff # A tool for colorizing the output of the 'diff' command, making it easier to spot differences between files.
+  - bat # A cat clone with syntax highlighting and Git integration, providing a colorful and user-friendly way to view file contents.
+  - curl # A command-line tool and library for transferring data with URLs, supporting various protocols like HTTP, HTTPS, FTP, and more.
+  - entr # A utility that allows you to run arbitrary commands when files in the specified directories change, making it useful for automated workflows.
+  - exa # A modern replacement for 'ls' with enhanced features, including color-coded output, Git integration, and improved file information display.
+  - exiftool # A powerful tool for reading, writing, and editing metadata in image, audio, and video files.
+  - flameshot # A screenshot tool with annotation features, enabling users to capture and edit screenshots with ease.
+  - git # A distributed version control system widely used for tracking changes in source code during software development.
+  - gpaste-2 # A clipboard management tool that allows users to manage and access a history of copied items.
+  - grc # A command-line utility that adds color and style to various command outputs, enhancing readability.
+  - htop # An interactive process viewer and system monitor, providing a visually appealing representation of system resource usage.
+  - httpie # A user-friendly HTTP client for the command line, making it easy to interact with APIs and test web services.
+  - iftop # A real-time console-based network bandwidth monitoring tool that displays a list of network connections and their usage.
+  - jq # A lightweight and flexible command-line JSON processor, enabling data extraction and manipulation.
+  - lnav # A log file viewer that facilitates log exploration with features like filtering, searching, and time-based navigation.
+  - nmap # A powerful network scanning tool used to discover hosts and services on a computer network, creating a map of the network.
+  - ntpdate # A command-line utility to set the local date and time by synchronizing with NTP (Network Time Protocol) servers.
+  - pipx # A tool for installing and running Python applications in isolated environments, providing a clean and reproducible Python environment for each application.
+  - screen # A terminal multiplexer that allows multiple virtual terminals within a single terminal window or remote session.
+  - sqlite3 # A command-line interface for interacting with SQLite databases, allowing users to execute SQL commands and manage databases.
+  - tcpdump # A packet analyzer that captures and displays network packets, providing detailed information about network activity.
+  - terminator # A feature-rich terminal emulator that supports multiple terminals in one window, with options for customization and efficient workspace management.
+  - tree # A command-line utility that displays directory structures in a tree-like format, helping users visualize the hierarchy of files and directories.
+  - vim # A highly configurable text editor known for its efficiency and powerful features, widely used by programmers and system administrators.
+  - wireshark # A network protocol analyzer that captures and inspects packets on a network, providing detailed information about network traffic.
+  - zsh # A powerful and customizable shell that is an extended version of the Bourne Shell (sh), with additional features and improvements for interactive use.
   # - netselect-apt
