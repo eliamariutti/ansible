@@ -4,6 +4,6 @@
     name: "{{ item }}"
     state: latest
   loop:
-    - wpscan
+    - wpscan # @todo : add api_key and run updates
     # - bundler
     # - jekyll

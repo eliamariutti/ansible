@@ -28,3 +28,13 @@
   - name: oh-my-zsh
     include_tasks: oh-my-zsh.yml
   tags: "oh-my-zsh"
+
+# - block:
+#   - name: rust/cargo install
+#     include_tasks: cargo.yml
+#   tags: [ "cargo", "rust" ]
+
+# - block:
+#   - name: Cargo packages
+#     include_tasks: cargo_packages.yml
+#   tags: [ "cargo", "rust" ]

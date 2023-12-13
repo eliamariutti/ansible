@@ -1,0 +1,5 @@
+---
+- name: Install "delta" Rust package
+  community.general.cargo:
+    name: git-delta
+    state: latest
