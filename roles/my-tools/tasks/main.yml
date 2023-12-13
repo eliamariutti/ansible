@@ -1,7 +1,30 @@
 ---
-- include_tasks: apt.yml
-- include_tasks: gem.yml
-- include_tasks: nodejs.yml
-- include_tasks: php.yml
-- include_tasks: composer.yml
-- include_tasks: oh-my-zsh.yml
+- block:
+  - name: apt
+    include_tasks: apt.yml
+  tags: "apt"
+
+- block:
+  - name: gem
+    include_tasks: gem.yml
+  tags: "gem"
+
+- block:
+  - name: nodejs
+    include_tasks: nodejs.yml
+  tags: "nodejs"
+
+- block:
+  - name: php
+    include_tasks: php.yml
+  tags: "php"
+
+- block:
+  - name: composer
+    include_tasks: composer.yml
+  tags: [ "php", "composer" ]
+
+- block:
+  - name: oh-my-zsh
+    include_tasks: oh-my-zsh.yml
+  tags: "oh-my-zsh"

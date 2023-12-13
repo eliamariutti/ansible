@@ -4,7 +4,19 @@
     name: <username>
     shell: /usr/bin/zsh
   become: true
+  tags: "zsh"
 
-- include_tasks : update_path.yml
-- include_tasks : update_aliases.yml
-- include_tasks : git_config.yml
+- block:
+  - name: Update PATH
+    include_tasks : update_path.yml
+  tags: "zsh_path"
+
+- block:
+  - name: Update aliases
+    include_tasks : update_aliases.yml
+  tags: "zsh_aliases"
+
+- block:
+  - name: Update git config
+    include_tasks : git_config.yml
+  tags: "git_config"
