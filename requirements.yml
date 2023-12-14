@@ -1,7 +1,7 @@
 # Install roles from the Ansible Galaxy
 - src: gantsign.oh-my-zsh
 - src: diodonfrost.p10k
-# - src: gantsign.visual-studio-code
+- src: gantsign.visual-studio-code
 - src: geerlingguy.nodejs
 - src: geerlingguy.php
 - src: geerlingguy.composer
