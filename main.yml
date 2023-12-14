@@ -1,9 +1,9 @@
 ---
-- name: "My dream env"
+- name: My dream env
   hosts: localhost
+  become: yes
+  become_user: root
+  become_method: sudo
   roles:
-    - role: "roles/my-tools"
-      become: yes
-      become_user: root
-      become_method: sudo
-    - role: "roles/my-settings"
+    - role: roles/my-tools
+    - role: roles/my-settings

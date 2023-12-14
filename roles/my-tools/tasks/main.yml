@@ -29,6 +29,11 @@
     include_tasks: oh-my-zsh.yml
   tags: "oh-my-zsh"
 
+- block:
+  - name: Install VSCode with extensions
+    include_tasks: vs_code.yml
+  tags: "vs_code"
+
 # - block:
 #   - name: rust/cargo install
 #     include_tasks: cargo.yml
