@@ -1,6 +1,6 @@
 ---
 - name: Install PHP
-  import_role:
+  ansible.builtin.import_role:
     name: geerlingguy.php
   vars:
     php_default_version_debian: "8.2"
@@ -18,4 +18,3 @@
       - php-soap
       - php-xml
       - php-zip
-

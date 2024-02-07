@@ -1,0 +1,53 @@
+---
+- name: Apt
+  tags: apt
+  block:
+    - name: Apt
+      ansible.builtin.include_tasks: apt.yml
+
+- name: Gem
+  tags: gem
+  block:
+    - name: Gem
+      ansible.builtin.include_tasks: gem.yml
+
+- name: Nodejs
+  tags: nodejs
+  block:
+    - name: Nodejs
+      ansible.builtin.include_tasks: nodejs.yml
+
+- name: Php
+  tags: php
+  block:
+    - name: Php
+      ansible.builtin.include_tasks: php.yml
+
+- name: Php
+  tags: php
+  block:
+    - name: Composer
+      ansible.builtin.include_tasks: composer.yml
+
+- name: Oh-my-zsh
+  tags: oh-my-zsh
+  block:
+    - name: Oh-my-zsh
+      ansible.builtin.include_tasks: oh-my-zsh.yml
+
+  # -name: Non root user
+  #   hosts: all
+  #   become: true
+  #   bcome_user: "{{ ansible_env.SUDOUSER }}"
+  #   - block:
+  #     - name: Install VSCode with extensions
+  #       include_tasks: vs_code.yml
+  #   tags: "vs_code"
+  # - block:
+  #   - name: rust/cargo install
+  #     include_tasks: cargo.yml
+  #   tags: [ "cargo", "rust" ]
+  # - block:
+  #   - name: Cargo packages
+  #     include_tasks: cargo_packages.yml
+#   tags: [ "cargo", "rust" ]

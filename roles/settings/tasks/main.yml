@@ -1,0 +1,25 @@
+---
+- name: Set zsh as default shell
+  ansible.builtin.user:
+    name: <username>
+    shell: /usr/bin/zsh
+  become: true
+  tags: zsh
+
+- name: Zsh_path
+  tags: zsh_path
+  block:
+    - name: Update PATH
+      ansible.builtin.include_tasks: update_path.yml
+
+- name: Zsh_aliases
+  tags: zsh_aliases
+  block:
+    - name: Update aliases
+      ansible.builtin.include_tasks: update_aliases.yml
+
+- name: Git_config
+  tags: git_config
+  block:
+    - name: Update git config
+      ansible.builtin.include_tasks: git_config.yml

@@ -1,0 +1,11 @@
+---
+settings_aliases:
+  - { name: ls, command: exa --icons }
+  - { name: nv, command: nvim }
+  - { name: cat, command: batcat }
+  - { name: nmap, command: grc nmap }
+  - { name: code, command: code -n }
+settings_path:
+  - $HOME/.config/composer/vendor/bin/
+  - $HOME/.local/bin
+  - $HOME/.cargo/bin

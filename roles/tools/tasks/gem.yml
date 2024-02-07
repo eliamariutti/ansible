@@ -1,8 +1,8 @@
 ---
-- name: "Installing tools from Gems"
-  gem:
+- name: Installing tools from Gems
+  community.general.gem:
     name: "{{ item }}"
-    state: latest
+    state: present
   loop:
     - wpscan # @todo : add api_key and run updates
     # - bundler

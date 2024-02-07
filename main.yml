@@ -1,9 +1,11 @@
 ---
 - name: My dream env
   hosts: localhost
-  become: yes
-  become_user: root
-  become_method: sudo
   roles:
-    - role: roles/my-tools
-    - role: roles/my-settings
+    - role: tools
+      become: true
+      become_method: ansible.builtin.sudo
+      become_user: root
+    - role: settings
+      become: false
+      become_user: "{{ ansible_env.USER }}"

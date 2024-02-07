@@ -1,5 +1,13 @@
 ---
-app_list:
+tools_the_list:
+  - { name: apt, tag: apt }
+  - { name: gem, tag: gem }
+  - { name: nodejs, tag: nodejs }
+  - { name: php, tag: php }
+  - { name: Composer, tag: php, composer: !!null "" }
+  - { name: oh-my-zsh, tag: oh-my-zsh }
+
+tools_app_list:
   - colordiff # A tool for colorizing the output of the 'diff' command, making it easier to spot differences between files.
   - bat # A cat clone with syntax highlighting and Git integration, providing a colorful and user-friendly way to view file contents.
   - curl # A command-line tool and library for transferring data with URLs, supporting various protocols like HTTP, HTTPS, FTP, and more.
@@ -17,11 +25,11 @@ app_list:
   - lnav # A log file viewer that facilitates log exploration with features like filtering, searching, and time-based navigation.
   - nmap # A powerful network scanning tool used to discover hosts and services on a computer network, creating a map of the network.
   - ntpdate # A command-line utility to set the local date and time by synchronizing with NTP (Network Time Protocol) servers.
-  - pipx # A tool for installing and running Python applications in isolated environments, providing a clean and reproducible Python environment for each application.
+  - pipx # A tool for installing and running Python applications in isolated environments.
   - screen # A terminal multiplexer that allows multiple virtual terminals within a single terminal window or remote session.
   - sqlite3 # A command-line interface for interacting with SQLite databases, allowing users to execute SQL commands and manage databases.
   - tcpdump # A packet analyzer that captures and displays network packets, providing detailed information about network activity.
-  - terminator # A feature-rich terminal emulator that supports multiple terminals in one window, with options for customization and efficient workspace management.
+  - terminator # A feature-rich terminal emulator that supports multiple terminals in one window.
   - tree # A command-line utility that displays directory structures in a tree-like format, helping users visualize the hierarchy of files and directories.
   - vim # A highly configurable text editor known for its efficiency and powerful features, widely used by programmers and system administrators.
   - wireshark # A network protocol analyzer that captures and inspects packets on a network, providing detailed information about network traffic.

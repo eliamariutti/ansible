@@ -1,15 +1,15 @@
 ---
 - name: Check if directories exist
-  stat:
+  ansible.builtin.stat:
     path: "{{ item }}"
   register: dir_check
-  with_items: "{{ path }}"
+  with_items: "{{ settings_path }}"
   ignore_errors: true
 
 - name: Add paths to .zshrc
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "{{ ansible_env.HOME }}/.zshrc"
-    line: "export PATH=$PATH:{{ item.item }}"
+    line: export PATH=$PATH:{{ item.item }}
   loop: "{{ dir_check.results }}"
   when: item.stat.exists
   tags: update_zshrc

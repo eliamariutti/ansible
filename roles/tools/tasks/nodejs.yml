@@ -1,9 +1,9 @@
 ---
 - name: Install Node.js dependencies
-  import_role:
+  ansible.builtin.import_role:
     name: geerlingguy.nodejs
   vars:
-    nodejs_version: "20.x"
+    nodejs_version: 20.x
     nodejs_npm_global_packages:
       - nushell
       - diff-so-fancy

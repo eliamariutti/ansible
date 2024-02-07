@@ -1,6 +1,6 @@
 ---
 - name: Install Composer and some global packages
-  import_role:
+  ansible.builtin.import_role:
     name: geerlingguy.composer
   vars:
     composer_home: /home/{{ ansible_user_id }}/.config/composer
@@ -11,4 +11,3 @@
       - { name: phpunit/phpunit }
       - { name: slevomat/coding-standard }
       - { name: squizlabs/php_codesniffer }
-

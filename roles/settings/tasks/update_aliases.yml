@@ -1,0 +1,23 @@
+---
+- name: Check if aliases need to be removed
+  ansible.builtin.shell: |
+    grep -E "^[[:space:]]*alias {{ settings_aliases | map(attribute='name') | list | join('|') }}=" ~/.zshrc
+  register: existing_aliases
+  changed_when: false
+
+- name: Remove specified aliases from .zshrc
+  ansible.builtin.shell: |
+    for ALIAS in {{ settings_aliases | map(attribute='name') | list | join(' ') }}
+    do
+      sed -i "/^[[:space:]]*alias $ALIAS=/d" ~/.zshrc
+    done
+  args:
+    executable: /bin/bash
+  when: existing_aliases.stdout_lines | length > 0
+  changed_when: existing_aliases is false
+
+- name: Add new aliases
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: alias {{ item.name }}="{{ item.command }}"
+  with_items: "{{ settings_aliases }}"
